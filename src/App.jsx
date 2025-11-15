@@ -9,7 +9,7 @@ import Planning from "./pages/Planning"
 const router = createBrowserRouter([
   {
     path: '/',
-    Component: <Layout />,
+    element: <Layout />,
     errorElement: <Error />,
     children: [
       {

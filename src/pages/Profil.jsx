@@ -1,5 +1,5 @@
 export default function Profil() {
   return (
-    <main>Profil</main>
+    <main className="Profil">Profil</main>
   )
 }

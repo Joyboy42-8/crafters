@@ -8,12 +8,12 @@ const user = {
 
 export default function Navbar() {
   return (
-    <aside className="NavBar">
+    <aside className="Navbar">
         <Brand />
 
         <Nav />
 
-        <button>Disconnect</button>
+        <button className="Disconnect">Disconnect</button>
     </aside>
   )
 }
@@ -23,17 +23,17 @@ function Nav() {
     <nav className="Nav">
 
       <NavLink to="/" className="NavLink">
-        <Home />
+        <Home size={14} />
         Home
       </NavLink>
 
-      <NavLink to="/agenda" className="NavLink">
-        <CalendarDays />
+      <NavLink to="/planning" className="NavLink">
+        <CalendarDays size={14} />
         Agenda
       </NavLink>
 
-      <NavLink to={`/profile/${user.id}`} className="NavLink">
-        <UserCog />
+      <NavLink to={`/profil/${user.id}`} className="NavLink">
+        <UserCog size={14} />
         Profile
       </NavLink>
 
