@@ -17,13 +17,13 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/profil/:id",
+        path: "/profil",
         element: <Profil />
       },
       {
         path: "/planning",
         element: <Planning />
-      }
+      },
     ],
   }
 ]);

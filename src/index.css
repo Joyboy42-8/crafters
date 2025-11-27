@@ -1,3 +1,6 @@
+/* CRAFTERS — FINAL PREMIUM DESIGN */
+/* STYLE: Glassmorphism sombre + Futuriste + Élégant + Artistique */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
@@ -6,57 +9,127 @@
     --font-roboto: "Roboto Slab";
 }
 
+/* ---------------- GLOBAL ---------------- */
 body {
-    @apply font-roboto overflow-hidden;
+    @apply font-roboto overflow-hidden text-base-content;
+    background: linear-gradient(135deg, #0c0c11, #1a1a24 60%, #111116);
+    color: #f2f2f2;
 }
 
 .Layout {
-    @apply flex w-full h-screen;
+    @apply min-h-screen flex overflow-hidden relative;
 }
 
+/* Background art subtil artistique */
+.Layout::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.04), transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+}
 
-
-
-
+/* ---------------- SIDEBAR ---------------- */
 .Navbar {
-    @apply w-1/4 border-r border-r-slate-500 
-    px-3 py-6 flex flex-col items-stretch 
-    justify-between h-screen text-center;
-}
-
-.Nav {
-    @apply flex flex-col items-stretch gap-2 px-6;
-}
-
-.NavLink {
-    @apply flex gap-3 items-center rounded-md bg-slate-300/10 px-3 py-2;
+    @apply w-64 h-screen flex flex-col gap-10 p-8 border-r border-white/10;
+    background: rgba(15, 15, 22, 0.55);
+    backdrop-filter: blur(22px);
+    box-shadow: 12px 0 35px rgba(0, 0, 0, 0.4);
 }
 
 .Brand {
-    @apply text-4xl font-extrabold text-center;
+    @apply text-4xl font-black text-center select-none;
+    font-weight: 900;
+    background: linear-gradient(90deg, #fafafa, #d6d6d6);
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
 }
 
-
-
-
-
-
-.Home,
-.Profil,
-.Planning
-{
-    @apply grow p-10;
+.Nav {
+    @apply flex flex-col gap-3;
 }
 
+.NavLink {
+    @apply flex items-center w-full gap-4 px-4 py-3 rounded-xl text-sm font-semibold
+        transition-all border border-white/10 cursor-pointer;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
 
+.NavLink:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateX(6px) scale(1.05);
+}
 
-
+.active {
+    @apply rounded-xl;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+}
 
 .Disconnect {
-    @apply border-t border-t-slate-500 py-3;
+    @apply border-t border-white/20 pt-4 mt-auto text-center cursor-pointer;
 }
 
+/* ---------------- MAIN PAGES ---------------- */
+.Home,
+.Profil,
+.Planning {
+    @apply grow p-10 overflow-y-auto;
+}
+
+/* Card en verre sombre premium */
+.PageCard {
+    @apply p-8 rounded-3xl border border-white/10;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(22px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.45);
+}
+
+/* ---------------- CHAT ---------------- */
+.chat-bubble {
+    @apply shadow-2xl border border-white/20;
+    background: rgba(40, 40, 55, 0.35) !important;
+    backdrop-filter: blur(16px);
+    color: #f2f2f2 !important;
+}
+
+.chat-header {
+    @apply font-bold tracking-wider text-white;
+}
+
+.avatar img {
+    @apply rounded-full shadow-lg border border-white/20;
+}
+
+/* ---------------- PROFILE ---------------- */
+.ProfileField {
+    @apply flex flex-col gap-1 p-4 rounded-2xl border border-white/10;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.ProfileField:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------- PLANNING ---------------- */
+.Planning iframe {
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.45);
+}
+
+/* ---------------- ERROR ---------------- */
 .Error {
-    @apply flex justify-center items-center;
+    @apply flex items-center justify-center text-red-400;
 }
-
